@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'consulta_presupuestos.dart';
 import 'package:flutter_date_pickers/flutter_date_pickers.dart';
 
 class FiltroClientesNuevosScreen extends StatefulWidget {
@@ -31,7 +32,12 @@ class _FiltroClientesNuevosScreenState
         ),
       ),
       body: Container(
-        color: Colors.white, // Cambiado el color de fondo a blanco
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/fondofmapp.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
         padding: EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -192,28 +198,22 @@ class _FiltroClientesNuevosScreenState
               ),
           ],
         ),
+
       ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 16.0, right: 16.0),
-            child: FloatingActionButton(
-              onPressed: () {},
-              child: Icon(Icons.search, color: Colors.white),
-              backgroundColor: iconColor,
-            ),
-          ),
-          FloatingActionButton(
-            onPressed: () {},
-            child: Icon(Icons.add, color: Colors.white),
-            backgroundColor: iconColor,
-          ),
-        ],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+              builder: (context) => ConsultaPresupuestosScreen()),);
+        },
+        child: Icon(Icons.search, color: Colors.white),
+        backgroundColor: iconColor,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
+
+
 

@@ -4,6 +4,7 @@ import 'notificaciones.dart';
 import 'configuracion.dart';
 import 'filtro_pedidos.dart';
 import 'filtro_clientes_nuevos.dart';
+import 'catalogo_productos.dart';
 
 class MenuPage extends StatelessWidget {
   @override
@@ -217,8 +218,10 @@ class MenuPage extends StatelessWidget {
                     SizedBox(height: 10), // Separación entre los botones
                     ElevatedButton(
                       onPressed: () {
-                        // Acción que deseas realizar cuando se presione el botón
-                        // Ejemplo: Navegar a la primera ventana
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                            builder: (context) => CatalogoProductosScreen()),);
                       },
                       child: Row(
                         children: [
